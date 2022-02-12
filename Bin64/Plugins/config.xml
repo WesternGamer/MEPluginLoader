@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<PluginConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Plugins>
-    <Id>D:\Games\steamapps\common\MedievalEngineers\Bin64\Plugins\FPSCounter.dll</Id>
-  </Plugins>
-  <Profiles />
-  <ListHash>44c411d2804fda276c7e66b1706f6955cbb35182  Plugins/plugins.zip</ListHash>
-  <DataHandlingConsent>false</DataHandlingConsent>
-</PluginConfig>
