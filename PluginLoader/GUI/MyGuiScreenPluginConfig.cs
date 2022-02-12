@@ -181,8 +181,8 @@ namespace MEPluginLoader.GUI
 
             pluginTable.SetCustomColumnWidths(new[]
             {
-                0.2f,
-                0.6f,
+                0.175f,
+                0.625f,
                 0.22f
             });
 
