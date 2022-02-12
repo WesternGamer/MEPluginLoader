@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VRage.Scripting</name>
+    </assembly>
+    <members>
+        <member name="T:VRage.Scripting.AnalysisExtensions">
+            <summary>
+                Contains various utilities used by the scripting engine.
+            </summary>
+        </member>
+        <member name="T:VRage.Scripting.Analyzers.WhitelistDiagnosticAnalyzer">
+            <summary>
+                This analyzer scans a syntax tree for prohibited type and member references.
+            </summary>
+        </member>
+        <member name="T:VRage.Scripting.MyScriptCompilerConfig">
+            <summary>
+            Configuration parameters for the script compiler.
+            </summary>
+        </member>
+        <member name="F:VRage.Scripting.MyScriptCompilerConfig.ReferencedAssemblies">
+            <summary>
+            Assemblies that must be added to script references.
+            </summary>
+        </member>
+        <member name="F:VRage.Scripting.MyScriptCompilerConfig.Whitelist">
+            <summary>
+            Whitelisted types and members.
+            </summary>
+        </member>
+        <member name="F:VRage.Scripting.MyScriptCompilerConfig.Blacklist">
+            <summary>
+            Whitelisted types and members.
+            </summary>
+        </member>
+        <member name="T:VRage.Scripting.IMyAccessListBatch">
+            <summary>
+                A handle which enables adding members to a list in a batch. It is highly
+                recommended that you try to group your changes into as few batches as possible.
+            </summary>
+        </member>
+        <member name="M:VRage.Scripting.IMyAccessListBatch.AddNamespaceOfTypes(System.Type[])">
+            <summary>
+                Adds the entire namespace of one or more given types.
+            </summary>
+            <param name="types"></param>
+        </member>
+        <member name="M:VRage.Scripting.IMyAccessListBatch.AddRecursiveNamespaceOfTypes(System.Type[])">
+            <summary>
+                Adds the entire namespace and any sub-namespaces of one or more given types.
+            </summary>
+            <param name="types"></param>
+        </member>
+        <member name="M:VRage.Scripting.IMyAccessListBatch.AddTypes(System.Type[])">
+            <summary>
+                Adds one or more specific types and all their members to the whitelist.
+            </summary>
+            <param name="types"></param>
+        </member>
+        <member name="M:VRage.Scripting.IMyAccessListBatch.AddMembers(System.Type,System.String[])">
+            <summary>
+                Adds only the specified members to the whitelist.
+            </summary>
+            <param name="type"></param>
+            <param name="members"></param>
+        </member>
+        <member name="M:VRage.Scripting.IMyAccessListBatch.AddMembers(System.Reflection.MemberInfo[])">
+            <summary>
+                Adds only the specified members to the whitelist.
+            </summary>
+            <param name="members"></param>
+        </member>
+        <member name="M:VRage.Scripting.IMyAnalysisBatch.IsAllowed(System.Type)">
+            <summary>
+            Whether a given type is allowed.
+            </summary>
+            <param name="type">Type to query.</param>
+        </member>
+        <member name="M:VRage.Scripting.IMyAnalysisBatch.IsAllowed(System.Reflection.MemberInfo)">
+            <summary>
+            Whether a given member of a type is allowed.
+            </summary>
+            <param name="member">Member to query.</param>
+        </member>
+        <member name="T:VRage.Scripting.MyScriptCompiler">
+            <summary>
+                Provides a compiler for scripts, with support for a type whitelist and instruction counting.
+            </summary>
+        </member>
+        <member name="P:VRage.Scripting.MyScriptCompiler.ReferencedAssemblies">
+            <summary>
+                Gets the namespaces that are to be added to the ingame script using list
+            </summary>
+        </member>
+        <member name="P:VRage.Scripting.MyScriptCompiler.ConditionalCompilationSymbols">
+            <summary>
+                Gets the conditional compilation symbols scripts are compiled with.
+            </summary>
+        </member>
+        <member name="P:VRage.Scripting.MyScriptCompiler.DiagnosticOutputPath">
+            <summary>
+                If this property is set, the compiler will write altered scripts and diagnostics to this
+                folder.
+            </summary>
+        </member>
+        <member name="P:VRage.Scripting.MyScriptCompiler.Whitelist">
+            <summary>
+                Gets the whitelist being used for this compiler.
+            </summary>
+        </member>
+        <member name="P:VRage.Scripting.MyScriptCompiler.IgnoredWarnings">
+            <summary>
+                Contains the diagnostic codes of warnings that should not be reported by the compiler.
+            </summary>
+        </member>
+        <member name="P:VRage.Scripting.MyScriptCompiler.EnableDebugInformation">
+            <summary>
+                Determines whether debug information is enabled on a global level. This decision can be made on a per-script
+                fashion on each of the compile methods, but if this property is set to <c>true</c>, it will override any
+                parameter value.
+            </summary>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.Compile(System.String,VRage.Scripting.Script,System.Collections.Generic.List{VRage.Scripting.MyScriptCompiler.Message},System.Boolean,System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+                Compiles a script.
+            </summary>
+            <param name="assemblyName"></param>
+            <param name="script"></param>
+            <param name="messages"></param>
+            <param name="enableDebugInformation"></param>
+            <param name="additionalReferences">Optional list of additional assembly references for this script.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.Compile(System.String,System.Collections.Generic.IEnumerable{VRage.Scripting.Script},System.Collections.Generic.List{VRage.Scripting.MyScriptCompiler.Message},System.Boolean,System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+                Compiles a script.
+            </summary>
+            <param name="assemblyName"></param>
+            <param name="scripts"></param>
+            <param name="messages"></param>
+            <param name="enableDebugInformation"></param>
+            /// <param name="additionalReferences">Optional list of additional assembly references for this script.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.AnalyzeDiagnostics(System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.Diagnostic},System.Collections.Generic.List{VRage.Scripting.MyScriptCompiler.Message},System.Boolean@)">
+            <summary>
+                Analyzes the given diagnostics and places errors and warnings in the messages lists.
+            </summary>
+            <param name="diagnostics"></param>
+            <param name="messages"></param>
+            <param name="success"></param>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.WriteDiagnostics(System.String,System.Collections.Generic.IEnumerable{VRage.Scripting.MyScriptCompiler.Message},System.Boolean)">
+            <summary>
+                If diagnostic output is enabled, this method writes the log of a compilation.
+            </summary>
+            <param name="target"></param>
+            <param name="assemblyName"></param>
+            <param name="messages"></param>
+            <param name="success"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.WriteDiagnostics(System.String,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxTree},System.String)">
+            <summary>
+                If diagnostics is enabled, this method writes
+            </summary>
+            <param name="target"></param>
+            <param name="assemblyName"></param>
+            <param name="syntaxTrees"></param>
+            <param name="suffix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.CreateCompilation(System.String,System.Collections.Generic.IEnumerable{VRage.Scripting.Script},System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Boolean)">
+            <summary>
+                Creates a ModAPI script compilation for the given script set.
+            </summary>
+            <param name="assemblyFileName"></param>
+            <param name="scripts"></param>
+            <param name="additionalReferences"></param>
+            <param name="target"></param>
+            <param name="enableDebugInformation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.AddReferencedAssemblies(System.Reflection.Assembly[])">
+            <summary>
+                Adds assemblyLocations to be referenced by scripts.
+            </summary>
+            <param name="assemblies"></param>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.AddConditionalCompilationSymbols(System.String[])">
+            <summary>
+                Adds a conditional compilation symbol
+            </summary>
+            <param name="symbols"></param>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.NextNonSpaceCharIndx(System.String,System.Int32)">
+            <summary>
+            Helper Fuction find next non space related character in string
+            </summary>
+            <param name="str"></param>
+            <param name="indx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptCompiler.WhiteSpaceRelated(System.Char)">
+            <summary>
+            Returns True if a character is whitespace or newline related
+            </summary>
+            <param name="ch"></param>
+            <returns></returns>
+        </member>
+        <member name="T:VRage.Scripting.MyWhitelistException">
+            <summary>
+            Exceptions during registration of whitelisted type members
+            </summary>
+        </member>
+        <member name="T:VRage.Scripting.MyScriptWhitelist">
+            <summary>
+                The script whitelist contains information about which types and type members are allowed in the
+                various types of scripts.
+            </summary>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptWhitelist.OpenWhitelistBatch">
+            <summary>
+                Opens the whitelist, allowing for addition of new members.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptWhitelist.OpenAnalysisBatch">
+            <summary>
+            Start a analysis operation.
+            
+            Analysis allows querying type and member legal statuses.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptWhitelist.Batch.ResolveMemberSymbol(System.Reflection.MemberInfo)">
+            <summary>
+            Given a type member resolve it to the matching symbol.
+            </summary>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VRage.Scripting.MyScriptWhitelist.Batch.FindMethodOverload(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.ISymbol},System.Reflection.ParameterInfo[])">
+            <summary>
+            Fi nd best overload for method symbol based on arguments.
+            </summary>
+            <param name="candidates">List of overloads.</param>
+            <param name="methodParameters">List of method arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:VRage.Scripting.Script">
+            <summary>
+                Represents a named script.
+            </summary>
+        </member>
+        <member name="F:VRage.Scripting.Script.Name">
+            <summary>
+                The name of the script.
+            </summary>
+        </member>
+        <member name="F:VRage.Scripting.Script.Code">
+            <summary>
+                The code content of the script.
+            </summary>
+        </member>
+        <member name="T:VRage.Scripting.TypeKeyExtensions">
+            <summary>
+                Roslyn does not provide a good way to compare a <see cref="T:System.Type" /> with an <see cref="T:Microsoft.CodeAnalysis.ISymbol" />. These
+                extensions aim to provide "good enough" comparisons. In addition it adds a few other key types to be used
+                for the <see cref="T:VRage.Scripting.MyScriptWhitelist" />.
+            </summary>
+        </member>
+        <member name="T:VRage.Scripting.TypeKeyQuantity">
+            <summary>
+            Determines what quantity a given type key should represent (see individual members)
+            </summary>
+        </member>
+        <member name="F:VRage.Scripting.TypeKeyQuantity.None">
+            <summary>
+            No quantity
+            </summary>
+        </member>
+        <member name="F:VRage.Scripting.TypeKeyQuantity.ThisOnly">
+            <summary>
+            This specific member only
+            </summary>
+        </member>
+        <member name="F:VRage.Scripting.TypeKeyQuantity.AllMembers">
+            <summary>
+            This and all nested members
+            </summary>
+        </member>
+    </members>
+</doc>

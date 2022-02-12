@@ -1,0 +1,162 @@
+
+¡º*
+(f7469fa95011a1f72d3b7f283c6095464296b5e5
+TheCrunchy/AllianceClientPluginAlliance Client Plugin"AlliancePlugin*!Plugin for alliance chat recolor.2Crunch
+þº*
+(8f4ed267b74786616961e8174176c73d52b17eca
+"wolfe-labs/SE-AnalogThrottlePlugin#WL Analog Script Input and Throttle"AnalogThrottle*oAllows in-game scripts to access data from connected controllers such as gamepads, joysticks and HOTAS devices.2Wolfe
+ºº*
+(aaf3f4f0aac8750277b140081ba57c5b8cfdc096
+Allen-Wrench/AutoRemoveStoneAutomatic Stone Removal*+Automatically removes stone from your ship.2dude: When enabled, stone will automatically be deleted from your ships cargo. Enable by either using the button at the bottom of a ship drills terminal page, or by adding the toggle action to your toolbar. Function will stay on until you toggle it back off, or release control of your ship.
+  
+’º*
+(d232004f0085199d517f08ad2483c3f11c1a84a1
+"austinvaness/BetterInventorySearchBetter Inventory Search*6Highlights the item you searched for in the inventory.2avaness:cHighlights the item you searched for in the inventory.
+Currently broken as of the Warfare 2 update.
+žº*
+(b67550a21a82b8cd67c0bd448277d0a113407a6a
+austinvaness/BlockPickerBlock Picker"BlockPicker*1Allows you to pick the target block using Ctrl+G.2avaness
+“º*
+(211b09e34691c94d722bab3a09ccb861813e364a
+austinvaness/CameraLCDCamera LCD [WIP]*1Allows a camera to be displayed on an LCD screen.2avaness
+¼º*
+(8c06847a95c64e6e4e2a6ab1512354adf1dfd5eb
+Allen-Wrench/ChatFilterChat Filter*3Decide what kinds of chat messages you want to see.2dude:«Block chat messsages from specific players or hide chat messages by type (global/faction/whisper). 
+  /mute [player name] - blocks chat messages from a player.
+  /unmute [player name] - unblocks players messages.
+  /cfconfig - open configuration window to set visibility for a specific chat channel.
+þº8
+(60be7d2f3f32e313ae147ddd97a6f76497885c0fClientPlugin
+%WesternGamer/CustomLoadingBackgroundsCustom Menu Backgrounds"CustomLoadingBackgrounds*YA plugin that allows you to customize the background on the loading screen and main menu.2WesternGamer
+‘º*
+(a3aab21e3aa4bd81e97e6aee0016beaeff1e8585
+austinvaness/DisableAnalyticsDisable Analytics*'Disables tracking and analytics by EOS.2avaness
+›º*
+(d5e9c2c3d0c1d6ddc8e35441df58c571f26b5d9d
+Math0424/SERichPresenceDiscord Rich Presence*2Enables Discord rich presence for Space Engineers.2Math0424
+º*
+(6f62278cf0b68e2381d7bb0b950f64ccd65f25b9
+WesternGamer/FPSCounterFPS Counter"
+FPSCounter* FPS Counter for Space Engineers.2WesternGamer
+½º*
+(4518fde375ecd6b8e9c17ff37630552abee1539d
+WesternGamer/FileCleanerFile Cleaner"FileCleaner*KThis plugin deletes temporary files and log files when you launch the game.2WesternGamer
+­º>
+(69a67baa21fc55b55f35fca60ea72b25ee05504eHeadTrackingPlugin
+Corben-SpacedOut/SEHeadTrackingHead Tracking*2Enable head tracking using the freetrack protocol.2Corben
+Âº*
+(b5c3e22449146ed3ade04f6d026f581a8348e525
+WesternGamer/HideVersionStringHide Version String"HideVersionString*=Makes the Main Menu cleaner by hiding the the version string.2WesternGamer
+©º*
+(b967e987dafc8a000d5e5aeba93583f84e4aa20c
+WesternGamer/InGameExitIn Game Exit"
+InGameExit*9Allows you to exit the game directly from the pause menu.2WesternGamer
+Êº*
+(8c8a2ad8146ce02d98074fd72e9fe8bdcebd5845
+WesternGamer/InGameWorldLoadingIn Game World Loading"InGameWorldLoading*AAdds the ability to load, join, or start a new world from ingame.2WesternGamer
+º*
+(dd9fd4c866266352d168e2f787bcaba0eb6af823
+WesternGamer/InstantExitInstant Exit"InstantExit*˜A plugin to help you debug/develop Space Engineers plugins without the hassle of teminating the Space Engineers process every time you build the plugin.2WesternGamer
+º*
+(891fe34822418876e9fdc9ae1f24dad8431bfc87
+Allen-Wrench/JumpSelectorJump Selector"JumpSelector*'The better way to use your jump drives.2dude:†Adds a new toolbar action for your jump drives: Jump Select.
+  This amazing little window lets you input a specific distance you want to blind jump, or select one of your GPS locations to jump to *from a sorted list*.
+  You can also see the current maximum distance your ship can jump, just below the input box for the blind jump.
+  It also displays the status of all of your jump drives along the top of the window, and tells you what percentage they are charged if not full. You can click on those buttons to turn the jump drive on or off.
+  Right clicking on any button will turn all of your jump drives on (as long as they are not broken).
+  
+£º*
+(edc27463b1e4638277aa848d16d4020e24b88672
+KlimeSE/LargePlanetsLarge Planets"LargePlanets*:Allows the creation of large planets up to 2500km diameter2Klime
+¡º*
+(239bbff92f7dd4a7c842ad210d562e82ec9d9bfd
+austinvaness/LcdImagePluginImage to LCD*>Adds a button to the LCD that converts an image to characters.2avaness
+µº*
+(7b54e3ad526352a16d6203a883a1350d7983174d
+Laavenx/MESWeaponBlacklistGuiMES Weapon Blacklist GUI*EGUI in G menu for blacklisting weapons from MES npc weapon randomizer2Laaven
+Óº*
+(8723090aa7d87246566d865b83d7bd34bb6f0ba7
+Math0424/MorePPSettingsMore PP Settings"MorePPSettings*!Change post processings settings.2Math0424:<Adds the ability to change lots of post processing settings.
+’ºX
+(0e76278d01f4b77824ab35547f001806423cb854MultigridProjectorMultigridProjectorClient
+#viktor-ferenczi/multigrid-projectorMultigrid Projector"#viktor-ferenczi/multigrid-projector*QAllows loading blueprints of multiple sub-grids into projectors and welding them.2Viktor:úThis plugin allows to load blueprints of multiple sub-grids into projectors and welding the blocks. 
+  
+Head/base blocks are added automatically as needed to connect subgrids. 
+  
+For support join the SE Mods Discord: https://discord.gg/PYPFPGf3Ca
+  
+{º*
+(17841b7ae335fb1e83767744e6dd5eff866f33d6
+austinvaness/NoArmorEdgesNo Armor Edges*Removes all armor edges.2avaness
+ìº*
+(3775534f8191e53600773ce2226d90636b32448d
+Allen-Wrench/NoForcedCameraZoomNo Forced Camera Zoom*3rd person camera freedom2dude:ãRemoves the check for obstructions when using the 3rd person view while seated in a ship. 
+    This allows you to rotate the camera around freely without it being forced to zoom in. 
+    Great for tunnel-boring mining ships!
+  
+íº*
+(8cc4bec2b0b53e2106273a20633fd413d0af4f5a
+WesternGamer/NoLogging
+No Logging"	NoLogging*€Disables logging to improve performance. It does not disable logging entirely like errors/exceptions and certain urgent warnings2WesternGamer
+Äº*
+(c2a7dc802b9e610522a3c2757725523e9298977a
+WesternGamer/No-News-PluginNo News Plugin"NoNewsPlugin*LThis plugin removes the News section and the DLC Section from the main menu.2WesternGamer
+Ùº*
+(2063922e3298220238dabefec26ab17920b722fe
+Allen-Wrench/PCUDisplayPCU display*#Persistent PCU display on your HUD.2dude:ØToggleable, always on screen readout of your current ships PCU, including connected grids. 
+    Created for use on servers that utilize the 'Top Grid' mechanic to help you keep your pcu in check.
+    
+    Toggle the display on/off using 'Ctrl + NumPad0' while sitting in a ship. The display will continue to show that ships PCU, along with anything that it is connected to until you disable the display.
+    You can change the position of the display by holding down 'Shift + Alt + Mouse Right Click' and moving the mouse.
+    
+    Upon first activation a dialog will let you input a value to use as the upper limit, all this does designate when to change the color of the display from green to red.
+    Settings are saved in your %AppData%/SpaceEngineers/Storage/PCUDisplay folder, where you can also change the keybind (default NumPad0).
+    
+    Note: If you merge a ship that you are currently displaying PCU for, the counter will not update until you disable and re-enable it.
+  
+›º*
+(f7a7566d8eb13792f9225d5d7a2d44311fdccd2a
+ austinvaness/PasswordCachePluginPassword Cache*1Stores server passwords until the game is closed.2avaness
+Žº@
+(a725d6754eb103a869f5c85dacdf3871174905fdSharedClientPlugin
+(viktor-ferenczi/performance-improvementsPerformance Improvements"(viktor-ferenczi/performance-improvements*>Various performance improvements to let the game run smoother.2Viktor:’Please see the GitHub page for the features, technical details and the Keen bug tickets to vote on.
+  
+This plugin is available for Torch and Dedicated Server as well.
+
+For support join the SE Mods Discord: https://discord.gg/PYPFPGf3Ca
+
+Thank you for supporting my work.
+  
+½º*
+(c0fed11bf58a0b6a4c67d9404f54f0ad6081d003
+WesternGamer/RDR2DeathScreenRDR2 Death Screen"RDR2DeathScreen*>Shows the Red Dead Redemption 2 death screen when player dies.2WesternGamer
+çº*
+(ce0c99b37d04b5dbdeafe239b49e0e5a79ee6c65
+#WesternGamer/RemoveIntroVideoPluginRemove Intro Video Plugin"RemoveIntroVideoPlugin*RThis plugin disables the intro video that is played when you open Space Engineers.2WesternGamer
+Iº*
+(8904139c395a3dab9f4d4313d7552c07a75b7af3
+KlimeSE/SEVRSE VR2Klime
+{º*
+(f1addd7337c92383c12e68e8c63a18b3dac50bb7
+thorwin99/SEWorldGenPluginSEWorldGenPlugin V2"SEWorldGenPlugin2	thorwin99
+¦º*
+(0fa128f358f78bceb2da9f6d94bcf26d77cd2a8a
+Math0424/ScrollableFOVScrollable FOV"Scrollable FOV*5Scroll FOV with your mousewheel (while holding caps).2Math0424
+‘º*
+(eeca2869224bb99a34542c5e40b5ac6912b08cbc
+austinvaness/ToolSwitcherPluginTool Switcher"ToolSwitcher*4Allows scrolling between welder, grinder, and drill.2avaness:äThis plugin is a simplified version of the Tool Switcher mod. It allows you to scroll between the welder, grinder, and drill. There is no configuration yet, so these tools will always be grouped together while the plugin is enabled. The benefits of this plugin over the mod are that you can use any toolbar page, and it will work on any multiplayer server.
+èº:
+(ca7b0be955ef7c0072c74e9cfc9743840417981bToolbarManager
+viktor-ferenczi/toolbar-managerToolbar Manager"viktor-ferenczi/toolbar-manager*:Allows saving and loading of character and block toolbars.2Viktor:‘Allows saving and loading of character and block toolbars. 
+
+Speed up your build by using a familiar toolbar layout, copy cockpits into remote control blocks and more. 
+
+Allows copying toolbars between ships and games, identifies blocks by name (like named groups). 
+
+Stores your toolbars locally, works with online multiplayer. 
+
+For support join the SE Mods Discord: https://discord.gg/PYPFPGf3Ca
+  
+Œº*
+(c8d74ba77112a76d468b4d03f60ac44342868b48
+"austinvaness/UnlimitedScriptLengthUnlimited Script Length*3Removes the programmable block script length limit.2avaness:bThis plugin removes the programmable block script length limit. This does not work in multiplayer.

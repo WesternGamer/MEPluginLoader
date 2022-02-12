@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VRage.Input</name>
+    </assembly>
+    <members>
+        <member name="T:VRage.Input.Devices.Keyboard.MyKeys">
+            <summary>
+            Enumeration for virtual keys.
+            </summary>
+        </member>
+        <member name="M:VRage.Input.MyDirectXInput.GetMousePosition">
+            <summary>
+            Returns immediatelly current cursor position.
+            Obtains position on every call, it can get cursor data with higher rate than 60 fps
+            </summary>
+        </member>
+        <member name="M:VRage.Input.MyDirectXInput.GetGamepadKeyDirections(System.Int32@,System.Int32@)">
+            <summary>
+            Get the actual and previous gamepad key directions (use the first POV controller).
+            Returns false if this type of input is not available.
+            </summary>
+        </member>
+    </members>
+</doc>
