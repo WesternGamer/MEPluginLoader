@@ -1,6 +1,8 @@
 # MEPluginLoader
 A tool to load plugins for Medieval Engineers automatically.
 
+Based off of [austinvaness's Plugin Loader for Space Engineers](https://github.com/sepluginloader/PluginLoader)
+
 ## Installation
 
 To install MEPluginLoader, the files must be copied into the game folder manually.
