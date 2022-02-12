@@ -25,12 +25,14 @@ namespace MEPluginLoader.GUI
         private MyGuiControlLabel enableLabel;
         private MyGuiControlCheckbox enableCheckbox;
         private MyGuiControlImageButton infoButton;
+        private MyGuiControlImageButton configButton;
 
         // Layout management
         private MyLayoutTable layoutTable;
 
         // Plugin currently loaded into the panel or null if none are loaded
         private PluginData plugin;
+        private PluginInstance instance;
 
         private readonly MyGuiScreenPluginConfig pluginsDialog;
 
@@ -50,6 +52,8 @@ namespace MEPluginLoader.GUI
                 }
 
                 plugin = value;
+                if (Main.Instance.TryGetPluginInstance(plugin.Id, out PluginInstance instance))
+                    this.instance = instance;
 
                 if (plugin == null)
                 {
@@ -114,6 +118,8 @@ namespace MEPluginLoader.GUI
             plugin.GetDescriptionText(descriptionText);
 
             enableCheckbox.IsChecked = pluginsDialog.AfterRebootEnableFlags[plugin.Id];
+
+            configButton.Enabled = instance != null && instance.HasConfigDialog;
         }
 
         public virtual void CreateControls(Vector2 rightSideOrigin)
@@ -199,6 +205,16 @@ namespace MEPluginLoader.GUI
             infoButton.ApplyStyle("DecoratedPanel_Button");
             infoButton.AllowBoundKey = true;
 
+            // Plugin config button
+            configButton = new MyGuiControlImageButton(onButtonClick: _ => instance?.OpenConfig())
+            {
+                OriginAlign = MyGuiDrawAlignEnum.HORISONTAL_CENTER_AND_VERTICAL_TOP,
+                Text = "Plugin Config"
+            };
+
+            configButton.ApplyStyle("DecoratedPanel_Button");
+            configButton.AllowBoundKey = true;
+
             LayoutControls(rightSideOrigin);
         }
 
@@ -206,7 +222,7 @@ namespace MEPluginLoader.GUI
         {
             layoutTable = new MyLayoutTable(this, rightSideOrigin, new Vector2(1f, 1f));
             layoutTable.SetColumnWidths(175f, 475f);
-            layoutTable.SetRowHeights(60f, 60f, 60f, 60f, 420f, 60f, 60f);
+            layoutTable.SetRowHeights(60f, 60f, 60f, 60f, 420f, 60f, 60f, 60f);
 
             int row = 0;
 
@@ -235,6 +251,10 @@ namespace MEPluginLoader.GUI
             row++;
 
             layoutTable.AddWithSize(infoButton, MyAlignH.Right, MyAlignV.Center, row, 0, 1, colSpan: 2);
+
+            row++;
+
+            layoutTable.AddWithSize(configButton, MyAlignH.Right, MyAlignV.Center, row, 0, 1, colSpan: 2);
 
             Vector2 border = 0.002f * Vector2.One;
             descriptionPanel.Position -= border;

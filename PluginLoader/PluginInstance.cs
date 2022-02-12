@@ -1,4 +1,5 @@
-﻿using MEPluginLoader.Data;
+﻿using HarmonyLib;
+using MEPluginLoader.Data;
 using MEPluginLoader.PluginInterface;
 using System;
 using System.Linq;
@@ -11,8 +12,12 @@ namespace MEPluginLoader
         private readonly Type mainType;
         public readonly PluginData data;
         private readonly Assembly mainAssembly;
+        private MethodInfo openConfigDialog;
         private IPlugin plugin;
         private IHandleInputPlugin inputPlugin;
+
+        public string Id => data.Id;
+        public bool HasConfigDialog => openConfigDialog != null;
 
         private PluginInstance(PluginData data, Assembly mainAssembly, Type mainType)
         {
@@ -27,12 +32,37 @@ namespace MEPluginLoader
             {
                 plugin = (IPlugin)Activator.CreateInstance(mainType);
                 inputPlugin = plugin as IHandleInputPlugin;
-                return true;
             }
             catch (Exception e)
             {
                 ThrowError($"Failed to instantiate {data} because of an error: {e}");
                 return false;
+            }
+
+            try
+            {
+                openConfigDialog = AccessTools.DeclaredMethod(mainType, "OpenConfigDialog", Array.Empty<Type>());
+            }
+            catch (Exception e)
+            {
+                LogFile.WriteLine($"Unable to find OpenConfigDialog() in {data} due to an error: {e}");
+                openConfigDialog = null;
+            }
+            return true;
+        }
+
+        public void OpenConfig()
+        {
+            if (plugin == null || openConfigDialog == null)
+                return;
+
+            try
+            {
+                openConfigDialog.Invoke(plugin, Array.Empty<object>());
+            }
+            catch (Exception e)
+            {
+                ThrowError($"Failed to open plugin config for {data} because of an error: {e}");
             }
         }
 
@@ -54,31 +84,6 @@ namespace MEPluginLoader
                 return false;
             }
         }
-
-        /*public void RegisterSession(MySession session)
-        {
-            if (plugin != null)
-            {
-                try
-                {
-                    Type descType = typeof(MySessionComponentDescriptor);
-                    int count = 0;
-                    foreach (Type t in mainAssembly.GetTypes().Where(t => Attribute.IsDefined(t, descType)))
-                    {
-                        MySessionComponentBase comp = (MySessionComponentBase)Activator.CreateInstance(t);
-                        session.RegisterComponent(comp, comp.UpdateOrder, comp.Priority);
-                        count++;
-                    }
-                    if(count > 0)
-                        LogFile.WriteLine($"Registered {count} session components from: {mainAssembly.FullName}");
-                }
-                catch (Exception e)
-                {
-                    ThrowError($"Failed to register {data} because of an error: {e}");
-                }
-            }
-                
-        }*/
 
         public bool Update()
         {

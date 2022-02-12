@@ -38,9 +38,7 @@ namespace MEPluginLoader.Data
         {
             string[] nameArgs = Id.Split(new char[] { '/', '\\' }, StringSplitOptions.RemoveEmptyEntries);
             if (nameArgs.Length != 2)
-            {
                 throw new Exception("Invalid GitHub name: " + Id);
-            }
 
             if (SourceDirectories != null)
             {
@@ -55,9 +53,7 @@ namespace MEPluginLoader.Data
                     }
 
                     if (path[path.Length - 1] != '/')
-                    {
                         path += '/';
-                    }
 
                     SourceDirectories[i] = path;
                 }
@@ -73,13 +69,9 @@ namespace MEPluginLoader.Data
             foreach (char ch in s)
             {
                 if (char.IsLetterOrDigit(ch))
-                {
                     sb.Append(ch);
-                }
                 else
-                {
                     sb.Append('_');
-                }
             }
             return sb.ToString();
         }
@@ -87,9 +79,7 @@ namespace MEPluginLoader.Data
         public override Assembly GetAssembly()
         {
             if (!Directory.Exists(cacheDir))
-            {
                 Directory.CreateDirectory(cacheDir);
-            }
 
             Assembly a;
 
@@ -97,7 +87,7 @@ namespace MEPluginLoader.Data
             string commitFile = Path.Combine(cacheDir, commitHashFile);
             if (!File.Exists(dllFile) || !File.Exists(commitFile) || File.ReadAllText(commitFile) != Commit)
             {
-                GUI.SplashScreen lbl = Main.Instance.Splash;
+                var lbl = Main.Instance.Splash;
                 lbl.SetText($"Downloading '{FriendlyName}'");
                 byte[] data = CompileFromSource(x => lbl.SetBarValue(x));
                 File.WriteAllBytes(dllFile, data);
@@ -149,23 +139,17 @@ namespace MEPluginLoader.Data
         private bool AllowedZipPath(string path)
         {
             if (!path.EndsWith(".cs", StringComparison.OrdinalIgnoreCase))
-            {
                 return false;
-            }
 
             if (SourceDirectories == null || SourceDirectories.Length == 0)
-            {
                 return true;
-            }
 
             path = RemoveRoot(path); // Make the base of the path the root of the repository
 
             foreach (string dir in SourceDirectories)
             {
                 if (path.StartsWith(dir, StringComparison.Ordinal))
-                {
                     return true;
-                }
             }
             return false;
         }
@@ -175,10 +159,7 @@ namespace MEPluginLoader.Data
             path = path.Replace('\\', '/').TrimStart('/');
             int index = path.IndexOf('/');
             if (index >= 0 && (index + 1) < path.Length)
-            {
                 return path.Substring(index + 1);
-            }
-
             return path;
         }
 

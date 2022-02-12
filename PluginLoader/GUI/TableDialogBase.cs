@@ -309,7 +309,7 @@ namespace MEPluginLoader.GUI
         private void OnDeleteButtonClick(MyGuiControlImageButton _)
         {
             string key = SelectedKey;
-            if (key == "")
+            if (string.IsNullOrEmpty(key))
             {
                 return;
             }

@@ -8,7 +8,7 @@ namespace MEPluginLoader.Network
     {
         private const int timeoutMs = 3000;
 
-        public const string listRepoName = "sepluginloader/PluginHub";
+        public const string listRepoName = "WesternGamer/MEPluginHub";
         public const string listRepoCommit = "main";
         public const string listRepoHash = "plugins.sha1";
 

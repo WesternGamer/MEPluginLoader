@@ -47,10 +47,6 @@ namespace MEPluginLoader
         // ReSharper disable once UnassignedGetOnlyAutoProperty
         public string StatsServerBaseUrl { get; }
 
-        // User consent to use the StatsServer
-        public bool DataHandlingConsent { get; set; }
-        public string DataHandlingConsentDate { get; set; }
-
         public int Count => EnabledPlugins.Count;
 
         public PluginConfig()
